@@ -1,4 +1,4 @@
-J = imread('lena1.jpg');
+J = imread('lena1.jpg'); % 读入噪声
 
 % 平均值滤波
 Kaverage = filter2(fspecial('average',3),J)/255;
