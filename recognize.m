@@ -1,6 +1,5 @@
-
 % 第一种
-I=imread('Img.jpg');
+I=imread('lena1.jpg');
 imshow(I)
 
 %用图像处理方法可以较好地辨别随机噪声和周期噪声
