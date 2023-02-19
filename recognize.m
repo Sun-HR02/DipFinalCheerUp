@@ -1,40 +1,7 @@
-% 第一种
-I=imread('lena1.jpg');
-imshow(I)
-
-%用图像处理方法可以较好地辨别随机噪声和周期噪声
-
-[m,n]=size(I);
-H=zeros(2*m-1,2*n-1);
-U=zeros(2*m-1,2*n-1);
-H(1:m,1:n)=I;
-U(1:m,1:n)=I;
-
-%用ftrans2函数进行傅里叶变换
-
-F=ftrans2(U);
-G=abs(F);
-
-%求相关系数
-n=mean(mean(I));
-Corr=G-(n*n);
-imagesc(Corr);
-
-%根据相关系数来判断图像中有随机噪声和周期噪声
-
-if (Corr~=0)
-    disp('Yes,there have random noise and cyclic noise')
-else
-    disp('No')
-end
-
-
-% ------------------------------------------------------------------ 分割线 ----------------------------------------------
-% 第二种
-I = imread('noisy_image.png');
+I = imread('lena1.jpg');
 imshow(I);
 
-Igray = rgb2gray(I); %将图像转换为灰度图
+Igray = im2gray(I); %将图像转换为灰度图
 
 %计算随机噪声估计，先计算无噪声原图灰度能量
 e0 = sum(sum(Igray.^2));
