@@ -1,6 +1,6 @@
 %2.皮肤区域分割
 %2.1基于RGB空间的非肤色像素初步过滤
-function result = filter(In)
+function result = divide(In)
     result = In;
     [heimage_ght, width, c] = size(In);
     image_r = In(:, :, 1); image_g = In(:, :, 2); iamge_b = In(:, :, 3);

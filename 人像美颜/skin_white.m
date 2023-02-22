@@ -40,7 +40,7 @@ function result = skin_white(image_sharp)
     mn = min(Ciny2);
 
     for i = 1:x
-
+ 
         for j = 1:y
 
             if tst(i, j) < mn
